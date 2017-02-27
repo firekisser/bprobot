@@ -7,8 +7,8 @@ Interpolation::Interpolation()
 
 Interpolation::Interpolation(int argc, char ** argv)
 {
-    this->argc = argc;
-    this->argv = argv;
+    this->argc_ = argc;
+    this->argv_ = argv;
 }
 
 Interpolation::~Interpolation()

@@ -1,3 +1,6 @@
+#ifndef TRACK_HPP
+#define TRACK_HPP
+
 #include <iostream>
 
 class Track
@@ -7,6 +10,8 @@ public:
     explicit Track(int argc, char ** argv);
     ~Track();
 private:
-    int argc;
-    char ** argv;
+    int argc_;
+    char ** argv_;
 };
+
+#endif //TRACK_HPP

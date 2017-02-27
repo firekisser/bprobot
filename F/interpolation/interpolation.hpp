@@ -1,3 +1,5 @@
+#ifndef INTERPOLATION_HPP
+#define INTERPOLATION_HPP
 #include <iostream>
 
 class Interpolation
@@ -8,6 +10,8 @@ public:
     ~Interpolation();
 
 private:
-    int argc;
-    char ** argv;
+    int argc_;
+    char ** argv_;
 };
+
+#endif //INTERPOLATION_HPP

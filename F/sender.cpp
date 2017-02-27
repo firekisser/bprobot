@@ -1,7 +1,12 @@
+/**
+ * This is a test module for module F,
+ * whitch need msg_D_1_A_IFS_INPUT at least
+*/
+
 #include "ros/ros.h"
 #include "std_msgs/String.h"
-#include "bprobot/D_1_A_IFS_INPUT.h"
-#include "bprobot/F_OPT_LIVING.h"
+#include "bprobot/msg_D_1_A_IFS_INPUT.h"
+#include "bprobot/msg_F_OPT_LIVING.h"
 #include <sstream>
 
 /**
@@ -13,15 +18,15 @@ int main(int argc, char **argv)
 
     ros::init(argc, argv, "main");
     ros::NodeHandle n;
-    ros::Publisher chatter_pub = n.advertise<bprobot::D_1_A_IFS_INPUT>("D_1_A_IFS_INPUT", 1000);
-    ros::Publisher control_pub = n.advertise<bprobot::F_OPT_LIVING>("F_OPT_LIVING", 1000);
+    ros::Publisher chatter_pub = n.advertise<bprobot::msg_D_1_A_IFS_INPUT>("msg_D_1_A_IFS_INPUT", 1000);
+    ros::Publisher control_pub = n.advertise<bprobot::msg_F_OPT_LIVING>("msg_F_OPT_LIVING", 1000);
     ros::Rate loop_rate(1);
 
     int count = 0;
     while (ros::ok())
     {
 
-        bprobot::F_OPT_LIVING input1;
+        bprobot::msg_F_OPT_LIVING input1;
         ros::Time t;
         t.init();
         t = t.now();
@@ -34,16 +39,16 @@ int main(int argc, char **argv)
 
 
 
-        bprobot::D_1_A_IFS_INPUT input0;
+        bprobot::msg_D_1_A_IFS_INPUT input0;
 
         input0.t = 111111;
         input0.id = 100000;
         input0.b.push_back(1001);
+        input0.b.push_back(300);
         input0.b.push_back(1001);
+        input0.b.push_back(40);
         input0.b.push_back(1001);
-        input0.b.push_back(1001);
-        input0.b.push_back(1001);
-        input0.b.push_back(1001);
+        input0.b.push_back(100);
         chatter_pub.publish(input0);
         
         input0.t = 222222;
